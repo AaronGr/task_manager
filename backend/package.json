@@ -1,0 +1,16 @@
+{
+  "name": "task_manager_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aaron Gravelle",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
