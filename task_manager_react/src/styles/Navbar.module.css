@@ -1,0 +1,26 @@
+.navbar {
+    position: fixed;     /* Stick to the viewport */
+    top: 0;              /* At the very top */
+    left: 0;             /* Start from the left edge */
+    width: 100%;         /* Stretch full width */
+    height: 100px;       /* Your desired height */
+    display: flex;       
+    justify-content: space-between; 
+    align-items: center;
+    background-color: firebrick;
+    z-index: 1000;       /* Ensure it stays above other elements */
+    color: white;
+}
+
+.title {
+    margin-left: 1em;
+}
+
+.nav-items {
+    margin-right: 1em;
+}
+
+.nav-item {
+    margin: 1em 0;
+    font-size: large;
+}
