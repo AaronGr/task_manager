@@ -5,8 +5,6 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { tasks } from "../utils/dummy_data";
-import { useState } from "react";
 import styles from "../styles/TaskTable.module.css";
 import { useQuery } from "@tanstack/react-query";
 

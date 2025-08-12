@@ -18,9 +18,16 @@
 
 .nav-items {
     margin-right: 1em;
+    display: flex;
 }
 
 .nav-item {
-    margin: 1em 0;
+    margin: 1em 1em;
     font-size: large;
+}
+
+.nav-item:hover {
+    transition: all 0.2s ease-in-out;
+    filter: brightness(85%);
+    cursor: pointer;
 }

@@ -10,6 +10,9 @@ export default function Navbar() {
                 <div className={styles["nav-item"]}>
                     <a>Login</a>
                 </div>
+                <div className={styles["nav-item"]}>
+                    <a>Add Task</a>
+                </div>
             </div>
         </div>
     )
