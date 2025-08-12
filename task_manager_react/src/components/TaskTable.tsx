@@ -8,8 +8,20 @@ import {
 import { tasks } from "../utils/dummy_data";
 import { useState } from "react";
 import styles from "../styles/TaskTable.module.css";
+import { useQuery } from "@tanstack/react-query";
 
 export default function TaskTable() {
+
+    const { isPending, error, data, isFetching } = useQuery({
+        queryKey: ['taskData'],
+        queryFn: async () => {
+            const response = await fetch(
+                'http://localhost:3000/tasks',
+            )
+            return await response.json()
+        },
+    })
+
     const columnHelper = createColumnHelper<Task>();
 
     const columns = [
@@ -33,16 +45,19 @@ export default function TaskTable() {
         }),
     ];
 
-    const [data, _setData] = useState([...tasks]);
-
     const table = useReactTable({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
     });
 
+
+    if (isPending) return 'Loading...'
+
+    if (error) return 'An error has occurred: ' + error.message
+
     return (
-        <div  className={styles["tasks-table"]}>
+        <div className={styles["tasks-table"]}>
             <table>
                 <thead>
                     {table.getHeaderGroups().map((headerGroup) => (
