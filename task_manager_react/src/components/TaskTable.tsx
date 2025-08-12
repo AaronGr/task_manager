@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function TaskTable() {
 
-    const { isPending, error, data, isFetching } = useQuery({
+    const { isPending, error, data, } = useQuery({
         queryKey: ['taskData'],
         queryFn: async () => {
             const response = await fetch(
