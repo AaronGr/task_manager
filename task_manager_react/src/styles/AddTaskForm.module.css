@@ -1,0 +1,8 @@
+input {
+    display: block;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}

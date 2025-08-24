@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import Modal from "./Modal";
+import AddTaskForm from "./AddTaskForm";
 
 export default function Navbar() {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -8,12 +9,7 @@ export default function Navbar() {
     return (
         <div className={styles.navbar}>
             <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} title="Add New Task">
-                <input
-                    type="text"
-                    value=""
-                    placeholder="Task name"
-                />
-                <button>Save</button>
+                <AddTaskForm />
             </Modal>
             <div className={styles.title}>
                 <h1>Task Manager</h1>

@@ -28,6 +28,26 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
+app.post("/tasks", async (req, res) => {
+  try {
+    const { title, description, completed, status, dueDate} = req.body;
+
+    if (!title) {
+      return res.status(400).json({ error: "Title is required" });
+    }
+
+    const result = await pool.query(
+      "INSERT INTO tasks (title, description, completed, status, dueDate) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [title, description, completed ?? false, status ?? 'Pending', dueDate]
+    );
+
+    res.status(201).json(result.rows[0]);
+  } catch (err) {
+    console.error("Error inserting task", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 // GET all tasks
 app.get('/tasks', async (req, res) => {
   try {

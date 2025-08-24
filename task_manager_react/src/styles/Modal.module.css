@@ -16,6 +16,7 @@
   border-radius: 8px;
   width: 400px;
   max-width: 90%;
+  color: black;
 }
 
 .closeButton {
@@ -31,3 +32,14 @@
 .closeButton:hover {
   background: darkred;
 }
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+input {
+  display: block
+}
+
+
